@@ -45,8 +45,8 @@ defmodule Glimpse do
       )  
   end 
 
-  def read(path, dtypes) do
-    DF.from_csv!(path, dtypes: dtypes)
+  def read(path, dtypes, delimiter, header) do
+    DF.from_csv!(path, dtypes: dtypes, delimiter: delimiter, header: header)
   end
 
 # notes 
