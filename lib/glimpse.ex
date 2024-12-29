@@ -33,7 +33,18 @@ defmodule Glimpse do
   def render_svg do 
     header = svg_start()
     footer = svg_end()
-    Enum.join([header, footer])
+    middle = render_square(0, 0, 100)
+    Enum.join([header, middle, footer])
+  end
+
+  def render_square(x, y, size) do
+      render_rectangle(x, y, size, size)
+  end
+
+  def render_rectangle(x, y, width, height) do
+    """
+    <rect x="#{x}" y="#{y}" width="#{width}" height="#{height}" fill="green" />
+    """
   end
 
   def create_dtypes(column_names) do

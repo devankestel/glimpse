@@ -22,11 +22,33 @@ defmodule GlimpseTest do
     """
   end
 
-  test "render" do
+  test "render_svg" do
     assert Glimpse.render_svg() == 
     """
     <svg>
+    <rect x="0" y="0" width="100" height="100" fill="green" />
     </svg>
+    """ 
+  end
+
+  test "render_square" do
+    x = 0
+    y = 0
+    size = 50
+    assert Glimpse.render_square(x, y, size) ==
+    """
+    <rect x="0" y="0" width="50" height="50" fill="green" />
+    """ 
+  end
+
+  test "render_rectangle" do
+    x = 0
+    y = 0
+    width = 50
+    height = 50 
+    assert Glimpse.render_rectangle(x, y, width, height) ==
+    """
+    <rect x="0" y="0" width="50" height="50" fill="green" />
     """ 
   end
 
